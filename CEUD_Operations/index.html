@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="modal" id="add_modal" onclick="closeModal(event,'add_modal')">
+        <div class="modal_child">
+            <i onclick="toggleModal(false,'add_modal')" class="fa-solid fa-circle-xmark close"></i>
+            <h1>Add Product</h1>
+            <div class="form">
+                <input type="text" class="modal_inp" placeholder="Enter Product Name" id="product_name">
+                <input type="text" class="modal_inp" placeholder="Enter Category" id="product_category">
+                <input type="number" class="modal_inp" placeholder="Enter Price" id="product_price">
+                <input type="text" class="modal_inp" placeholder="Enter Seller" id="product_seller">
+                <input type="text" class="modal_inp" placeholder="Enter Company" id="product_company">
+                <input type="text" class="modal_inp" placeholder="Enter Image Link" id="product_image">
+                <button onclick="addProduct(event,'add_modal')">create Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="update_modal" onclick="closeModal(event,'update_modal')">
+        <div class="modal_child">
+            <i onclick="toggleModal(false,'update_modal')" class="fa-solid fa-circle-xmark close"></i>
+            <h1>Edit Product</h1>
+            <div class="form">
+                <input type="text" class="modal_inp" placeholder="Enter Product Name" id="product_name_up">
+                <input type="text" class="modal_inp" placeholder="Enter Category" id="product_category_up">
+                <input type="number" class="modal_inp" placeholder="Enter Price" id="product_price_up">
+                <input type="text" class="modal_inp" placeholder="Enter Seller" id="product_seller_up">
+                <input type="text" class="modal_inp" placeholder="Enter Company" id="product_company_up">
+                <input type="text" class="modal_inp" placeholder="Enter Image Link" id="product_image_up">
+                <button onclick="updateProduct(event,'update_modal')">Update Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for delete confirmation -->
+
+    <div class="modal" id="delete_modal" onclick="closeModal(event,'delete_modal')">
+        <div class="modal_child delete_modal_child">
+            <h3>Are you sure you want to delete the product?</h3>
+            <div>
+                <button onclick="confirmation(true)">Yes</button>
+                <button onclick="confirmation(false)">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for viewing the product -->
+    <div class="modal" id="view_modal" onclick="closeModal(event,'view_modal')">
+        <div class="modal_child">
+            <i onclick="toggleModal(false,'view_modal')" class="fa-solid fa-circle-xmark close"></i>
+            <div class="view_contant">
+                <img src="" class="pro_img" id="pro_img" alt="">
+                <div class="view_text">
+                    <div id="pro_name">Name : </div>
+                    <div id="pro_category">Category : </div>
+                    <div id="pro_price">Price : </div>
+                    <div id="pro_seller"></div>
+                    <div id="pro_company"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter">
+        <div class="inps">
+            <input type="text" class="inp" onkeyup="readValue(event,'name')" id="name" placeholder="enter the value">
+        </div>
+        <select class="inp" onchange="readValue(event,'category')">
+            <option value="">Select category</option>
+            <option value="electronics">Electronics</option>
+            <option value="appliances">Appliances</option>
+            <option value="wearables">Wearables</option>
+        </select>
+        <select class="inp" onchange="readValue(event,'price')">
+            <option value="">Select Price </option>
+            <option value="1-1000">1-1000</option>
+            <option value="1000-10000">1000-10000</option>
+            <option value="10000-50000">10000-50000</option>
+            <option value="50000-100000">50000-100000</option>   
+        </select>
+        <button onclick="filter()">filer</button>
+    </div>
+
+
+    <!-- modal for data display -->
+
+    
+    <div class="data-display">
+        <button onclick="toggleModal(true,'add_modal')">Add New Product</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>name</th>
+                    <th>category</th>
+                    <th>price</th>
+                    <th>image</th>
+                    <th>seller</th>
+                    <th>company</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                
+            </tbody>
+        </table>
+
+        <div class="message" id="message">
+            No data Found
+        </div>
+
+        <div class="pagination">
+            <div class="pagination_controls">
+                <button onclick="prevPage()">
+                    <i class="fa-solid fa-angles-left"></i> 
+                    Prev
+                </button>
+
+                <div class="pagelink" id="pagelink">
+
+                </div>
+
+                <button onclick="nextPage()">
+                    Next
+                    <i class="fa-solid fa-angles-right"></i> 
+                </button>
+                <input type="text" placeholder="Jump to Page" class="inp" onkeyup="openpage(Number(event.target.value))">
+            </div>
+            <div class="pagination_details">
+                <p>Page <span id="currentpage"></span> of <span id="totalpages">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

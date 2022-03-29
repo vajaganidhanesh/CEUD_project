@@ -1,0 +1,217 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.filter{
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 10px;
+    box-shadow: 0 0 10px lightgray;
+}
+.data-display{
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    align-items: flex-end;
+    /* background-color: rgb(228, 222, 222); */
+}
+table{
+    width:100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table,th,tr{
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+tr,th,td{
+    padding: 10px;
+}
+th{
+    background-color: yellowgreen;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+}
+td{
+    border: 1px solid lightgray;
+    text-transform: capitalize;
+    text-align: center;
+    height: 50px;
+}
+.inps{
+    width: 100%;
+}
+.inp{
+    width: 20%;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    text-indent: 20px;
+    outline: none;
+
+}
+button{
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+tbody >  :nth-child(even){
+    background-color: rgb(247, 241, 241);
+}
+.message{
+    font-size: 27px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0,0,0,0.3);
+    font-weight: bold;
+    display: none;
+}
+.modal{
+    width:100%;
+    height: 100vh;
+    background-color: rgba(219, 215, 215, 0.692);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal_child{
+    width:40%;
+    height:auto;
+    background-color: white;
+    padding: 30px;
+    font-family: segoe UI;
+    color:#575454;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    /* row-gap: 20px; */
+}
+.form{
+    /* background-color: red; */
+    margin-top: 20px;
+    display: flex;
+    column-gap: 2%;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.modal_inp{
+    width: 49%;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    text-indent: 20px;
+    outline: none;
+}
+
+.delete_modal_child{
+    width: 20%;
+    row-gap: 30px;
+}
+
+.close{
+    color: red;
+    font-size: 28px;
+    position: absolute;
+    top: -5px;
+    right:-5px;
+    transition: .3s;
+}
+.close:hover{
+    transform:scale(1.2);
+    cursor: pointer;
+}
+.pimg{
+    width: 50px;
+}
+tr>td:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    border: none;
+}
+.action>i:nth-child(1)
+{
+    color: blueviolet;
+    cursor: pointer;
+}
+.action>i:nth-child(2)
+{
+    color: rgb(121, 179, 7);
+    cursor: pointer;
+
+}
+.action>i:nth-child(3)
+{
+    color: red;
+    cursor: pointer;
+
+}
+.pro_img{
+    display: inline-block;
+    width: 250px;
+}
+ 
+/* css for pagination */
+
+.pagination{
+    width:100%;
+    height:50px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+}
+.pagination_controls{
+    width:50%;
+    height: 50px;
+    /* background-color: lightgray; */
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.pagination_details{
+    width: 15%;
+    height:50px;
+    /* background-color: yellowgreen; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.view_contant{
+   display: flex;
+   justify-content:flex-start;
+   align-items: center;
+   column-gap: 15px;
+}
+.view_text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-weight: 600;
+}
+.pagelink{
+    display: flex;
+    column-gap: 20px;
+}
+.pagelinks{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.pagelinks:hover{
+    background-color: #dedede;
+}
